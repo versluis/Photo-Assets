@@ -20,7 +20,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    
+    // NSLog(@"Frigging Degraded key is %@", (NSString *)PHImageResultIsDegradedKey);
 }
 
 - (void)didReceiveMemoryWarning {
@@ -49,10 +50,11 @@
         CGSize imageSize = CGSizeMake(1024, 1024);
         [manager requestImageForAsset:asset targetSize:imageSize contentMode:PHImageContentModeAspectFit options:nil resultHandler:^(UIImage * _Nullable result, NSDictionary * _Nullable info) {
             
-            // add image to our array
-            [self.images addObject:result];
-            NSLog(@"Asset added: %@", [result description]);
-            
+            // add image to our array - if it's hi-res
+            if ([[info valueForKey:PHImageResultIsDegradedKey] isEqualToNumber:@0]) {
+                [self.images addObject:result];
+                NSLog(@"Asset added: %@", [result description]);
+            }
         }];
     }
 }

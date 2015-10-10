@@ -31,16 +31,8 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="6ml-dw-dx9">
-                        <barButtonItem key="leftBarButtonItem" title="Display Asset" id="6tx-G0-nph">
-                            <connections>
-                                <action selector="displayAssets:" destination="BYZ-38-t0r" id="CIA-8E-TB0"/>
-                            </connections>
-                        </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Read Assets" id="3oE-v0-QC3">
-                            <connections>
-                                <action selector="readAssets" destination="BYZ-38-t0r" id="97C-hM-QJL"/>
-                            </connections>
-                        </barButtonItem>
+                        <barButtonItem key="leftBarButtonItem" title="Load Asset" id="6tx-G0-nph"/>
+                        <barButtonItem key="rightBarButtonItem" title="Save Asset" id="3oE-v0-QC3"/>
                     </navigationItem>
                     <connections>
                         <outlet property="imageView" destination="J1j-5Y-ljB" id="ZA2-cr-F1u"/>
